@@ -11,9 +11,6 @@ return {
     cmd = { "ZenMode" },
     config = function() require("user.plugins.zen-mode").config() end,
   },
-  ["andweeb/presence.nvim"] = {
-    setup = require("user.plugins.presence").config(),
-  },
   ["nvim-treesitter/playground"] = {
     cmd = "TSHighlightCapturesUnderCursor",
   },
