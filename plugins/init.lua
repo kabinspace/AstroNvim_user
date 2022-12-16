@@ -19,4 +19,8 @@ return {
     setup = function() table.insert(astronvim.file_plugins, "neoscroll.nvim") end,
     config = function() require("user.plugins.neoscroll").config() end,
   },
+  ["lvimuser/lsp-inlayhints.nvim"] = {
+    module = "lsp-inlayhints",
+    config = function() require "user.plugins.lsp-inlayhints" end,
+  },
 }

@@ -65,4 +65,6 @@ return {
   SpellCap = { sp = "#ffbba6", undercurl = true },
   SpellLocal = { sp = "#ffbba6", undercurl = true },
   SpellRare = { sp = "#ffbba6", undercurl = true },
+  -- Inlay hint
+  LspInlayHint = { fg = "#777d86" },
 }
