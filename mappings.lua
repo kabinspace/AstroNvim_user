@@ -23,6 +23,8 @@ return {
     ["<space>sg"] = { "<cmd>Telescope highlights<cr>", desc = "Highlight groups" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+    ["<leader>z"] = { "<cmd>ZenMode<cr>", desc = "Zen Mode" },
   },
   t = {
     -- setting a mapping to false will disable it
