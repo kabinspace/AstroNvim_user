@@ -3,7 +3,7 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local luasnip = require "luasnip"
-    return astronvim.default_tbl(opts, {
+    return astronvim.extend_tbl(opts, {
       completion = {
         completeopt = "menu,menuone,noinsert",
       },
