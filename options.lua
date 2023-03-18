@@ -13,7 +13,7 @@ return {
     foldmethod = "expr",
     linebreak = true, -- linebreak soft wrap at words
     list = true, -- show whitespace characters
-    listchars = { tab = " ", extends = "⟩", precedes = "⟨", trail = "·", eol = "﬋" },
+    -- listchars = { tab = " ", extends = "⟩", precedes = "⟨", trail = "·", eol = "﬋" },
     showbreak = "﬌ ",
   },
   g = {
