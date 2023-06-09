@@ -1,11 +1,27 @@
 return {
   -- You can disable default plugins as follows:
-  { "goolord/alpha-nvim", enabled = false },
-  { "max397574/better-escape.nvim", enabled = true },
+  { "goolord/alpha-nvim",           enabled = false },
+  { "max397574/better-escape.nvim", enabled = false },
   -- You can also add new plugins here as well:
-
-  { "nvim-treesitter/playground", cmd = "TSHighlightCapturesUnderCursor", dependencies = { "nvim-treesitter" } },
   { "lvimuser/lsp-inlayhints.nvim", config = true },
+  {
+    "karb94/neoscroll.nvim",
+    event = "BufRead",
+    config = function()
+      require("neoscroll").setup {
+        -- All these keys will be mapped to their corresponding default scrolling animation
+        mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
+        easing_function = nil,       -- Default easing function
+        pre_hook = nil,              -- Function to run before the scrolling animation starts
+        post_hook = nil,             -- Function to run after the scrolling animation ends
+        performance_mode = false,    -- Disable "Performance Mode" on all buffers.
+      }
+    end,
+  },
   {
     "folke/zen-mode.nvim",
     cmd = { "ZenMode" },
@@ -17,7 +33,7 @@ return {
         -- * a percentage of the width / height of the editor when <= 1
         -- * a function that returns the width or the height
         width = 120, -- width of the Zen window
-        height = 1, -- height of the Zen window
+        height = 1,  -- height of the Zen window
         -- by default, no options are changed for the Zen window
         -- uncomment any of the options below, or add other vim.wo options you want to apply
         options = {
@@ -35,12 +51,12 @@ return {
         -- comment the lines to not apply the options
         options = {
           enabled = true,
-          ruler = false, -- disables the ruler text in the cmd line area
-          showcmd = false, -- disables the command in the last line of the screen
+          ruler = false,                -- disables the ruler text in the cmd line area
+          showcmd = false,              -- disables the command in the last line of the screen
         },
-        twilight = { enabled = true }, -- enable to start Twilight when zen mode opens
+        twilight = { enabled = true },  -- enable to start Twilight when zen mode opens
         gitsigns = { enabled = false }, -- disables git signs
-        tmux = { enabled = false }, -- disables the tmux statusline
+        tmux = { enabled = false },     -- disables the tmux statusline
         -- this will change the font size on kitty when in zen mode
         -- to make this work, you need to set the following kitty options:
         -- - allow_remote_control socket-only
@@ -52,24 +68,4 @@ return {
       },
     },
   },
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   init = function() table.insert(astronvim.file_plugins, "neoscroll.nvim") end,
-  --   opts = {
-  --     -- All these keys will be mapped to their corresponding default scrolling animation
-  --     mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "<C-y>", "<C-e>", "zt", "zz", "zb" },
-  --     hide_cursor = true, -- Hide cursor while scrolling
-  --     stop_eof = true, -- Stop at <EOF> when scrolling downwards
-  --     use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-  --     respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
-  --     cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-  --     easing_function = nil, -- Default easing function
-  --     pre_hook = nil, -- Function to run before the scrolling animation starts
-  --     post_hook = nil, -- Function to run after the scrolling animation ends
-  --   },
-  -- },
-  -- {
-  --   "wakatime/vim-wakatime",
-  --   init = function() table.insert(astronvim.file_plugins, "vim-wakatime") end,
-  -- },
 }

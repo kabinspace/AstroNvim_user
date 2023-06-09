@@ -60,11 +60,18 @@ return {
   AerialStructIcon = { fg = "#f28b25" },
   AerialTypeParameter = { fg = "#9CDCFE" },
   AerialVariableIcon = { fg = "#9CDCFE" },
+  AerialGuide = { fg = "#777d86" },
   -- Spell
   SpellBad = { sp = "#ffbba6", undercurl = true },
   SpellCap = { sp = "#ffbba6", undercurl = true },
   SpellLocal = { sp = "#ffbba6", undercurl = true },
   SpellRare = { sp = "#ffbba6", undercurl = true },
   -- Inlay hint
-  LspInlayHint = { fg = "#777d86" },
+  LspInlayHint = { fg = "#4b5263" },
+  -- Indentline
+  IndentBlanklineSpaceChar = { fg = "#3b4048", nocombine = true },
+  IndentBlanklineChar = { fg = "#3b4048", nocombine = true },
+  IndentBlanklineContextStart = { fg = "#5c5c5c", underline = true },
+  IndentBlanklineContextChar = { fg = "#5c5c5c", nocombine = true },
+  IndentBlanklineSpaceCharBlankline = { fg = "#3b4048", nocombine = true },
 }
