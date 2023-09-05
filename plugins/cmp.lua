@@ -3,14 +3,18 @@ return {
   opts = function(_, opts)
     local cmp = require "cmp"
     local luasnip = require "luasnip"
+    local border_opts = {
+      border = "single",
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+    }
+
     return require("astronvim.utils").extend_tbl(opts, {
       completion = {
         completeopt = "menu,menuone,noinsert",
       },
       window = {
-        documentation = {
-          max_width = 40,
-        },
+        completion = cmp.config.window.bordered(border_opts),
+        documentation = cmp.config.window.bordered(border_opts),
       },
       mapping = {
         ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
