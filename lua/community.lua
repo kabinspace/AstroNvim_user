@@ -10,7 +10,7 @@ return {
   -- heirline
   { import = "astrocommunity.recipes.heirline-vscode-winbar" },
   -- codesnap
-  -- { import = "astrocommunity.media.codesnap-nvim" },
+  { import = "astrocommunity.media.codesnap-nvim" },
   {
     "mistricky/codesnap.nvim",
     build = "make",
