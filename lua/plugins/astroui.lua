@@ -156,6 +156,23 @@ return {
         AerialVariableIcon = { fg = "#9CDCFE" },
         AerialGuide = { fg = "#777d86" },
 
+        -- Neo-tree
+        NeoTreeIndentMarker = { fg = "#8094B4" },
+        NeoTreeNormal = { bg = "#1a1c20" },
+        NeoTreeNormalNC = { bg = "#1a1c20" },
+        NeoTreeFloatBorder = { fg = "#61afef" },
+        NeoTreeFloatNormal = { fg = "#abb2bf", bg = "#1a1c20" },
+        NeoTreeTitleBar = { fg = "#1a1c20", bg = "#61afef", bold = true },
+        NeoTreeMessage = { fg = "#626262", italic = false },
+        NeoTreeDotfiles = { fg = "#777777" },
+        NeoTreeDotfile = { fg = "#777777" },
+        NeoTreeWinSeparator = { fg = "#1a1c20", bg = "#1a1c20" },
+        NeoTreeTabActive = { fg = "#1a1c20", bg = "#61afef", bold = true },
+        NeoTreeTabInactive = { fg = "#777777", bg = "#1a1c20" },
+        NeoTreeTabSeparatorActive = { fg = "#61afef", bg = "#61afef" },
+        NeoTreeTabSeparatorInactive = { fg = "#1a1c20", bg = "#1a1c20" },
+        NeoTreeGitModified = { fg = "#fc9c4e" },
+
         -- Lazy
         LazyNormal = { fg = "#abb2bf", bg = "#1a1c20" },
         LazyH1 = { fg = "#1a1c20", bg = "#61afef", bold = true },
@@ -179,16 +196,6 @@ return {
         DiagnosticUnderlineHint = { undercurl = false },
         LspInlayHint = { fg = "#4b5263" },
 
-        -- Neo-tree
-        NeoTreeIndentMarker = { fg = "#8094B4" },
-        NeoTreeNormal = { bg = "#1b1f27" },
-        NeoTreeNormalNC = { bg = "#1b1f27" },
-        NeoTreeFloatBorder = { fg = "#61afef" },
-        NeoTreeTitleBar = { fg = "#1b1f27", bg = "#61afef", bold = true },
-        NeoTreeMessage = { fg = "#626262", italic = false },
-        NeoTreeDotfiles = { fg = "#777777" },
-        NeoTreeDotfile = { fg = "#777777" },
-
         -- Rainbow brackets
         RainbowDelimiterRed = { fg = "Gold" },
         RainbowDelimiterYellow = { fg = "Orchid" },
@@ -206,19 +213,20 @@ return {
         MasonHighlight = { fg = "#98c379", bg = "#1a1c20" },
         MasonHighlightBlockBold = { fg = "#1a1c20", bg = "#61afef", bold = true },
 
-        -- Indent-blankline
-        IndentBlanklineSpaceChar = { fg = "#3b4048" },
-        IndentBlanklineChar = { fg = "#3b4048" },
-        IndentBlanklineContextStart = { fg = "#5c5c5c" },
-        IndentBlanklineContextChar = { fg = "#5c5c5c" },
-        IndentBlanklineSpaceCharBlankline = { fg = "#3b4048" },
-
         -- Nvim-native
         DiffDelete = { fg = "#1e222a", bg = "#e06c75" },
         DiffAdd = { fg = "#1e222a", bg = "#98c379" },
         DiffText = { fg = "#1e222a", bg = "#e5c06b" },
         NormalNC = { fg = "#abb2bf", bg = "#1e222a" },
         MoreMsg = { fg = "#98c379", bold = true },
+        TabLineFill = { bg = "#2c323c" },
+
+        -- Indent-blankline
+        IndentBlanklineSpaceChar = { fg = "#3b4048" },
+        IndentBlanklineChar = { fg = "#3b4048" },
+        IndentBlanklineContextStart = { fg = "#5c5c5c" },
+        IndentBlanklineContextChar = { fg = "#5c5c5c" },
+        IndentBlanklineSpaceCharBlankline = { fg = "#3b4048" },
 
         -- Spellcheck
         SpellBad = { sp = "#ffbba6", undercurl = true },
@@ -258,7 +266,7 @@ return {
         diagnostics = { bold = true },
       },
       colors = {
-        buffer_overflow_bg = "#282c34",
+        buffer_overflow_bg = "#2c323c",
       },
     },
   },
