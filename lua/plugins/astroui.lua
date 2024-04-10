@@ -160,7 +160,7 @@ return {
         NeoTreeIndentMarker = { fg = "#8094B4" },
         NeoTreeNormal = { bg = "#1a1c20" },
         NeoTreeNormalNC = { bg = "#1a1c20" },
-        NeoTreeFloatBorder = { fg = "#61afef" },
+        NeoTreeFloatBorder = { fg = "#61afef", bg = "#1a1c20" },
         NeoTreeFloatNormal = { fg = "#abb2bf", bg = "#1a1c20" },
         NeoTreeTitleBar = { fg = "#1a1c20", bg = "#61afef", bold = true },
         NeoTreeMessage = { fg = "#626262", italic = false },
