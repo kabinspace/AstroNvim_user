@@ -13,7 +13,7 @@
 
 - **[Neovim 0.9+](https://github.com/neovim/neovim/releases/tag/stable)**
 
-- **[Codicons Font](https://github.com/microsoft/vscode-codicons)**
+- **[Codicons Font](https://github.com/kabinspace/AstroNvim_user/blob/master/.github/assets/codicon.ttf)**
 
 ## 🛠️ Direct Installation
 
