@@ -20,4 +20,7 @@ return {
       bg_color = "#a8b0d5",
     },
   },
+  {
+    import = "astrocommunity.pack.python"
+  },
 }
