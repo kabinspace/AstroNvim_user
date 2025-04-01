@@ -4,15 +4,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
   opts = {
-    auto_install = true,
-    ensure_installed = {
-      "python",
-      "lua",
-      "c",
-      "bash",
-      "html",
-      "css",
-      "javascript",
+    indent = {
+      disable = { "yaml" },
     },
   },
 }

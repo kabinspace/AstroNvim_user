@@ -13,7 +13,7 @@
 
 - **[Neovim 0.9+](https://github.com/neovim/neovim/releases/tag/stable)**
 
-- **[Codicons Font](https://github.com/kabinspace/AstroNvim_user/blob/master/.github/assets/codicon.ttf)**
+- **[JetBrainsMono Nerd Font](https://www.nerdfonts.com/font-downloads)**
 
 ## 🛠️ Direct Installation
 
@@ -21,7 +21,6 @@
 
 ```sh
 mv ~/.config/nvim ~/.config/nvim.bak
-
 ```
 
 - **Clone the repository**
