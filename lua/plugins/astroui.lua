@@ -7,6 +7,7 @@
 return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
+  ---
   opts = {
     -- change colorscheme
     colorscheme = "astrodark",
@@ -22,7 +23,7 @@ return {
         DiffDelete = { fg = "#1e222a", bg = "#e06c75" },
         DiffAdd = { fg = "#1e222a", bg = "#98c379" },
         DiffText = { fg = "#1e222a", bg = "#e5c06b" },
-        StatusLine = { fg = "#abb2bf", bg = "#2c323c" },
+        StatusLine = { fg = "#abb2bf", bg = "#1a1c20" },
         WinBar = { fg = "#5c6370", bg = "#1e222a" },
         Normal = { fg = "#abb2bf", bg = "#1e222a" },
         Visual = { underline = false, bg = "#3e4452" },
@@ -32,6 +33,7 @@ return {
         DiagnosticInfo = { bold = true, fg = "#c9c9c9" },
         DiagnosticWarn = { bold = true, fg = "#ff9640" },
         Comment = { bold = false, fg = "#777d86" },
+        PmenuSel = { bold = true, bg = "#2c323c" },
         Title = { bold = true, fg = "#61afef" },
         MoreMsg = { bold = true, fg = "#98c379" },
         WinSeparator = { fg = "#2c323c" },
@@ -60,10 +62,10 @@ return {
         GitSignsAdd = { link = "String" },
         gitEmail = { link = "Comment" },
         gitEmailDelimiter = { link = "gitEmail" },
-        PmenuSel = { link = "CursorColumn" },
         NormalNC = { link = "Normal" },
         WinBarNC = { link = "WinBar" },
         MatchParen = { link = "Visual" },
+        FileModified = { link = "Identifier" },
 
         -- Markup
         ["@markup.strong"] = { bold = true, fg = "#abb2bf" },
@@ -98,6 +100,9 @@ return {
         NeoTreeIndentMarker = { fg = "#8094B4" },
         NeoTreeNormal = { link = "NeoTreeFloatNormal" },
         NeoTreeDotfile = { link = "Comment" },
+        NeoTreeModified = { link = "Identifier" },
+        NeoTreeFileStatsHeader = { link = "Comment" },
+        NeoTreeFileStats = { link = "NeoTreeFileStatsHeader" },
         NeoTreeMessage = { link = "Comment" },
         NeoTreeNormalNC = { link = "NeoTreeNormal" },
         NeoTreeDotfiles = { link = "Comment" },
@@ -112,6 +117,13 @@ return {
         NeoTreeGitIgnored = { link = "NeoTreeDotfile" },
         NeoTreeGitDeleted = { link = "GitSignsDelete" },
         NeoTreeGitUnstaged = { link = "NeoTreeGitDeleted" },
+
+        -- Status
+        StatusNormal = { bg = "#61afef" },
+        StatusInsert = { bg = "#98c379" },
+        StatusVisual = { bg = "#c678dd" },
+        StatusCommand = { bg = "#e5c06b" },
+        StatusReplace = { bg = "#e06c75" },
 
         -- Todo comment
         TodoBgNOTE = { bold = true, fg = "#1e222a", bg = "#c9c9c9" },
@@ -139,12 +151,14 @@ return {
         -- Snacks
         SnacksPickerTitle = { bold = true, fg = "#1e222a", bg = "#61afef" },
         SnacksPickerPreviewTitle = { bold = true, fg = "#1e222a", bg = "#98c379" },
+        SnacksDashboardKey = { bold = true, fg = "#d19a66" },
+        SnacksPickerListCursorLine = { link = "PmenuSel" },
         SnacksIndent = { link = "LineNr" },
         SnacksIndentScope = { link = "SnacksIndent" },
         SnacksPicker = { link = "Normal" },
         SnacksPickerBorder = { link = "Identifier" },
-        SnacksPickerPrompt = { link = "Removed" },
-        SnacksPickerTotals = { link = "Function" },
+        SnacksPickerPrompt = { link = "Function" },
+        SnacksPickerTotals = { link = "Identifier" },
         SnacksPickerToggle = { link = "SnacksPickerTitle" },
         SnacksPickerDir = { link = "SnacksPickerBorder" },
         SnacksPickerFile = { link = "SnacksPickerBorder" },
@@ -152,15 +166,18 @@ return {
         SnacksPickerGitDate = { link = "Number" },
         SnacksPickerGitType = { link = "Comment" },
         SnacksPickerGitCommit = { link = "Keyword" },
+        SnacksDashboardDesc = { link = "@markup.strong" },
 
         -- Blink
-        BlinkCmpLabelMatch = { bold = true, fg = "#18a2fe" },
+        BlinkCmpLabelMatch = { bold = true, fg = "#cecece" },
         BlinkCmpLabel = { link = "Identifier" },
         BlinkCmpLabelDescription = { link = "Comment" },
         BlinkCmpSignatureHelp = { link = "Normal" },
 
         -- Which-key
-        WhichKey = { link = "String" },
+        WhichKey = { link = "SnacksDashboardKey" },
+        WhichKeyDesc = { link = "Identifier" },
+        WhichKeyGroup = { link = "MoreMsg" },
         WhichKeySeparator = { link = "Comment" },
 
         -- Keywords and Operators
@@ -221,6 +238,7 @@ return {
         MasonHighlightBlockBold = { link = "NeoTreeTitleBar" },
         MasonNormal = { link = "NeoTreeFloatNormal" },
         MasonHighlight = { link = "String" },
+        MasonBackdrop = { link = "Normal" },
         MasonHeader = { link = "Title" },
         MasonHeading = { link = "Title" },
         MasonMuted = { link = "Removed" },
@@ -270,10 +288,107 @@ return {
       DiagnosticError = "󰅙",
       DiagnosticWarn = "",
       DiagnosticInfo = "󰋼",
+      DiagnosticHint = "󰌵",
       DapStopped = "",
+      GitBranch = "",
     },
-
     status = {
+      modes = {
+        ["n"] = {
+          "N",
+          "normal",
+        },
+        ["no"] = {
+          "N",
+          "normal",
+        },
+        ["nov"] = {
+          "N",
+          "normal",
+        },
+        ["noV"] = {
+          "N",
+          "normal",
+        },
+        ["v"] = {
+          "V",
+          "visual",
+        },
+        ["Vs"] = {
+          "V",
+          "visual",
+        },
+        ["V"] = {
+          "L",
+          "visual",
+        },
+        ["\22"] = {
+          "B",
+          "visual",
+        },
+
+        ["c"] = {
+          "C",
+          "command",
+        },
+        ["cr"] = {
+          "C",
+          "command",
+        },
+        ["cv"] = {
+          "C",
+          "command",
+        },
+        ["cvr"] = {
+          "C",
+          "command",
+        },
+
+        ["i"] = {
+          "I",
+          "insert",
+        },
+        ["ic"] = {
+          "I",
+          "insert",
+        },
+        ["ix"] = {
+          "I",
+          "insert",
+        },
+        ["R"] = {
+          "R",
+          "replace",
+        },
+        ["Rc"] = {
+          "R",
+          "replace",
+        },
+        ["Rx"] = {
+          "R",
+          "replace",
+        },
+        ["Rv"] = {
+          "R",
+          "replace",
+        },
+        ["Rvc"] = {
+          "R",
+          "replace",
+        },
+        ["s"] = {
+          "S",
+          "visual",
+        },
+        ["S"] = {
+          "S",
+          "visual",
+        },
+        ["t"] = {
+          "T",
+          "terminal",
+        },
+      },
       separators = {
         breadcrumbs = "  ",
         path = "  ",
@@ -281,6 +396,7 @@ return {
       attributes = {
         buffer_active = { bold = false, italic = false },
         diagnostics = { bold = true },
+        mode = { bold = true },
       },
       colors = {
         buffer_overflow_bg = "#2c323c",
