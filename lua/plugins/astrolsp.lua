@@ -42,33 +42,8 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      typos_lsp = { single_file_support = false },
       clangd = { capabilities = { offsetEncoding = "utf-8" } },
       lua_ls = { settings = { Lua = { hint = { enable = true, arrayIndex = "Disable" } } } },
-      ruff = {
-        init_options = {
-          settings = {
-            lint = {
-              ignore = {
-                "F401",
-                "F403",
-                "F404",
-                "F406",
-                "F407",
-                "F701",
-                "F702",
-                "F704",
-                "F706",
-                "F821",
-                "F822",
-                "F823",
-                "F831",
-                "F841",
-              },
-            },
-          },
-        },
-      },
       basedpyright = {
         before_init = function(_, c)
           if not c.settings then c.settings = {} end
