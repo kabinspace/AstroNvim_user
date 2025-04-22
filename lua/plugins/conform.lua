@@ -7,7 +7,6 @@ return {
   dependencies = { "williamboman/mason.nvim" },
   ---@param opts conform.setupOpts
   opts = function(_, opts)
-    local buf_utils = require "astrocore.buffer"
     opts.default_format_opts = { lsp_format = "fallback" }
 
     opts.format_on_save = function(bufnr)
@@ -18,23 +17,15 @@ return {
     end
 
     opts.formatters_by_ft = {
-      ["*"] = function(bufnr)
-        return buf_utils.is_valid(bufnr) and buf_utils.has_filetype(bufnr) and { "injected" } or {}
-      end,
       c = { "clang_format" },
-      packer = { "packer_fmt" },
+      cpp = { "clang_format" },
       toml = { "taplo" },
       lua = { "stylua" },
-      puppet = { "puppet-lint" },
       sh = { "shfmt" },
+      go = { "gofmt" },
       sql = { "sqlfluff" },
-      python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-      ["_"] = function(bufnr)
-        return buf_utils.is_valid(bufnr)
-            and buf_utils.has_filetype(bufnr)
-            and { "trim_whitespace", "trim_newlines", "squeeze_blanks" }
-          or {}
-      end,
+      python = { "ruff_format" },
+      typst = { "prettypst" },
     }
 
     -- prettier filetypes
