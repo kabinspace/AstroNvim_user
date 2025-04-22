@@ -36,6 +36,7 @@ return {
         conceallevel = 0, -- disable conceal
         linebreak = true, -- linebreak soft wrap at words
         list = true, -- show whitespace characters
+        guicursor = "n-v-i-c:block-Cursor",
         showbreak = "󱞩 ",
         listchars = { tab = "󰌒 ", extends = "⟩", precedes = "⟨", trail = "·", nbsp = "␣" },
       },
@@ -75,6 +76,9 @@ return {
         -- better increment/decrement
         ["-"] = { "<C-x>", desc = "Descrement number" },
         ["+"] = { "<C-a>", desc = "Increment number" },
+
+        -- create new tab
+        ["<Leader>N"] = { "<Cmd>tabnew<CR>", desc = "New Tab" },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
