@@ -1,5 +1,14 @@
 return {
   "echasnovski/mini.icons",
+  opts = {
+    file = {
+      ["README.md"] = { glyph = "󰂺" },
+    },
+    filetype = {
+      c = { glyph = "" },
+      go = { glyph = "" },
+    },
+  },
   specs = {
     {
       "nvim-neo-tree/neo-tree.nvim",
