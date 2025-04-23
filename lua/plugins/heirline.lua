@@ -53,7 +53,7 @@ return {
 
             -- markdown
             markdown_oxide = "[M]oxide",
-            typos_lsp = "Spell",
+            typos_lsp = "Typo",
             prettier = "Prettier",
 
             -- lua
