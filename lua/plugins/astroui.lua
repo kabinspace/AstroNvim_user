@@ -174,6 +174,13 @@ return {
         BlinkCmpLabelDescription = { link = "Comment" },
         BlinkCmpSignatureHelp = { link = "Normal" },
 
+        -- Neogit
+        NeogitBranch = { bold = true, fg = "#c678dd" },
+        NeogitPopupOptionKey = { link = "MoreMsg" },
+        NeogitPopupSwitchKey = { link = "MoreMsg" },
+        NeogitPopupActionKey = { link = "Whichkey" },
+        NeogitSectionHeader = { link = "Title" },
+
         -- Which-key
         WhichKey = { link = "SnacksDashboardKey" },
         WhichKeyDesc = { link = "Identifier" },
