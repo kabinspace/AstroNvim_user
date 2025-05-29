@@ -9,6 +9,7 @@ return {
       local buf_utils = require "astrocore.buffer"
       return buf_utils.is_valid(bufnr) and not buf_utils.is_large(bufnr)
     end,
+    blacklist = { "html" },
   },
   specs = {
     {
